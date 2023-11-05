@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="your-script.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF-qCvY6u3YlBR3xNrnWtMQUI1U0taty8&libraries=places"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js' defer></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css' rel='stylesheet' />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script defer="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <link rel="stylesheet" href="./scss/_variables.scss">
+    <link rel="stylesheet" href="./scss/main.scss">
+
+    <script id="search-js" defer src="https://api.mapbox.com/search-js/v1.0.0-beta.17/web.js">
+    </script>
+    <script>
+        const script = document.getElementById('search-js');
+        script.onload = function () {
+            mapboxsearch.autofill({
+                accessToken: 'pk.eyJ1IjoidXNhbWFzaGF1a3QiLCJhIjoiY2xtejJlc2Y0MXo5ZzJrcGUza2JxZXZpbiJ9.PaqaTdv2jqY4tL1TXTjmPg'
+            });
+        };
+    </script>
+
+
+</head>
+
+<body class="" style="background-color:#ffbd59">
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #ffbd59;">
+        <div class="container-fluid " id="con-1">
+            <a class="navbar-brand mx-4" href="#">Moving</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mb-2 mb-lg-0 ">
+                    <li class="nav-item mx-4">
+                        <a class="nav-link active fs-5" aria-current="page" href="#">Storage</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="nav-link active fs-5" href="#">Giftcard</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav navbar-collapse  align-items-start justify-content-end"
+                    id="navbarSupportedContent">
+
+                    <li class="nav-item ">
+                        <a class="nav-link active fs-5 " href="#">Contact us</a>
+                        <!-- style="margin-left:800px;" -->
+                    </li>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="presec" id="z-sec">
+        <div class="maincontainer" style="margin: 0px 100px;">
+            <div class="container mt-3 checkboxes-contianer">
+                <div class="row justify-content-center">
+                    <div class="col-auto">
+                        <img class="img-fluid" src="./sec1img/Frame.png" alt="Logo">
+                    </div>
+                    <div class="">
+                        <h1 class="text-center text-uppercase fw-bold move-up-from banner-title pt-5">
+                            The Simplest <span class="text-white"> (&amp; Cheapest)</span> Way To
+                            Move
+                        </h1>
+                    </div>
+    </section>
+
+    <section class="">
+
+
+        <div class="container ">
+            <form action="#" method="post" onsubmit="alert('no checking out');  return false;">
+                <div class="row  justify-content-center">
+                    <div class="col-sm-8 col-xl-3 col-lg-4 col-md-6 col-12 my-3 ">
+                        <label class="checkbox_1">
+                            <div class="container d-flex flex-column custom-border px-5 "
+                                style=" height: 300px;  width: 250px; ">
+                                <img class="button_img" src="Vector (1).svg" alt="car" id="car1">
+                                <span class="fw-500 fs-5 custom-position">$1</span>
+                                <h5 class="text-center pb-2 ">1 Room/studio</h5>
+                                <input type="radio" name="group1" id="room1" value="room1" onchange="checkRoom()">
+                                <span class="checkmark "></span>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-3 col-lg-4 col-md-6 col-12 my-3 ">
+                        <label class="checkbox_1">
+                            <div class="container  d-flex flex-column align-items-center  custom-border px-5  "
+                                style=" height: 300px; width: 250px; ">
+                                <img class="button_img" src="Vector.svg" alt="car">
+                                <span class="fw-500 fs-5 custom-position">$775</span>
+                                <h5 class="text-center pb-2 text-wrap ">1 Bedroom home</h5>
+                                <input type="radio" name="group1" id="room2" value="room2" onchange="checkRoom()">
+                                <span class="checkmark"></span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col-sm-8 col-xl-3 col-lg-4 col-md-6 col-12 my-3">
+                        <label class="checkbox_1">
+                            <div class="container d-flex flex-column  custom-border px-5"
+                                style=" height: 300px;  width: 250px;">
+                                <img class="button_img" src="vector (2).svg" alt="car">
+                                <span class="fw-500 fs-5 custom-position">$1275</span>
+                                <h5 class="text-center pb-2 "> 1-2 Bedroom home</h5>
+                                <input type="radio" name="group1" id="room3" value="room3" onchange="checkRoom()">
+
+                                <span class="checkmark"></span>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="col-sm-8 col-xl-3 col-lg-4 col-md-6 col-12 my-3">
+                        <label class="checkbox_1">
+                            <div class="container  d-flex flex-column  custom-border px-5 "
+                                style="  height: 300px; width: 250px;">
+                                <img class="button_img position-relative" src="vector (3).svg" alt="car">
+                                <span class="fw-500 fs-5 custom-position">$1675</span>
+                                <h5 class="text-center pb-2 "> 2-3 Bedroom</h5>
+                                <input type="radio" name="group1" id="room4" value="room4" onchange="checkRoom()">
+                                <span class="checkmark"></span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row mb-5 pt-3" id="row3">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-3 "
+                style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px)">
+                <input class="input1 text-left " id="inputt2" type="date">
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-3 "
+                style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px) ">
+                <select name="" class="input1" id="inputt1" onchange="updatetotal" style="-webkit-appearance: none;">
+
+                    <option value="" disabled="" selected="">Time</option>
+                    <option value="8 AM - 12 PM">8 AM - 12 PM</option>
+                    <option value="12 PM - 4 PM">12 PM - 4 PM</option>
+                    <option value="4 PM - 8 PM">4 PM - 8 PM</option>
+                </select>
+                <!-- <input class="input1  text-dark text-left" id="inputt1" type="text" placeholder="12pm - 4pm"> -->
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-3 "
+                style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px)">
+
+                <input class="input1 text-dark text-left" id="map" type="text" autocomplete="address-level1"
+                    placeholder="Moving from">
+
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-3"
+                style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px)">
+                <!-- <mapbox-address-autofill
+                    access-token="pk.eyJ1IjoidXNhbWFzaGF1a3QiLCJhIjoiY2xtejJlc2Y0MXo5ZzJrcGUza2JxZXZpbiJ9.PaqaTdv2jqY4tL1TXTjmPg"> -->
+                <input class="input1 text-dark text-start" id="map2" type="text" autocomplete="address-level2"
+                    placeholder="Moving to">
+                <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF-qCvY6u3YlBR3xNrnWtMQUI1U0taty8&libraries=places"></script> -->
+                <script
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF-qCvY6u3YlBR3xNrnWtMQUI1U0taty8&libraries=places"></script>
+                <script>
+                    // Initialize the Places Autocomplete service
+                    function initAutocomplete() {
+                        const input = document.getElementById('map');
+                        const autocomplete = new google.maps.places.Autocomplete(input);
+
+
+                        // Optionally, you can set additional options for the Autocomplete here
+                        // For example, to restrict results to a specific country:
+                        // autocomplete.setComponentRestrictions({ 'country': 'US' });
+                    }
+                    function initAutocomplete2() {
+                        const input2 = document.getElementById('map2');
+                        const autocomplete2 = new google.maps.places.Autocomplete(input2);
+                    }
+                    // Add an event listener to initialize Autocomplete when the page loads
+                    window.addEventListener('load', function () {
+                        initAutocomplete();
+                        initAutocomplete2();
+                    });
+                </script>
+
+            </div>
+        </div>
+
+
+        <!-- <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-3"
+            style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px)">
+            <input class="input1" id="map" type="text" autocomplete="address-level2" placeholder="moving to">
+        
+        </div> -->
+
+        <div class="center2 me-2 d-flex"
+            style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+            <input type="checkbox" id="terms-input" name="terms-input" class="invisible custom-checkbox">
+            <label for="terms-input" class="chkbx mb-auto"></label>
+            <p class="ptxt" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                I accept all <a href="#" id="">terms and conditions</a>
+            </p>
+        </div>
+        <!-- <button type="button" class="btn btn-outline-dark">Review and Confirm</button> -->
+        </div>
+        <section class="bottom-wave" id="first-sec">
+            <!-- Button trigger modal -->
+            <button class=" drkbtn py-3 px-4 d-block mx-auto " type="submit" id="fetchValueButton"
+                data-bs-toggle="modal" data-bs-target="#exampleModal"
+                style="translate: none; text-wrap: nowrap; rotate: none; scale: none; transform: translate(0px, 0px);">
+                Review and Confirm
+            </button>
+
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <!-- Use modal-lg class for a larger modal -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="col text-start">
+                                <h5 class="modal-title" id="exampleModalLabel">Payments</h5>
+                            </div>
+                            <div class="col">
+                                <h5 class="modal-title px-4" id="exampleModalLabel">Order Summary</h5>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid bg-body-tertiary">
+                                <div class="row">
+                                    <!-- Left Column -->
+                                    <div class="col-xl-6 col-lg-6 col-md-12">
+                                        <form class="row g-3">
+                                            <!-- <h5>Personal Information</h5> -->
+                                            <div class="colcol-xl-6 col-lg-6 col-md-12">
+                                                <label for="firstName" class="form-label">First Name</label>
+                                                <input type="text" class="form-control" id="firstName" name="firstName"
+                                                    pattern="[A-Za-z]+" title="Alphabets only" required="">
+                                            </div>
+                                            <div class="colcol-xl-6 col-lg-6 col-md-12">
+                                                <label for="lastName" class="form-label">Last Name</label>
+                                                <input type="text" class="form-control" id="lastName" name="lastName"
+                                                    pattern="[A-Za-z]+" title="Alphabets only" required="">
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-12">
+                                                <label for="phone" class="form-label">Phone Number</label>
+                                                <input name="Phone" id="Phone" class="form-control" type="text"
+                                                    pattern=".{12,12}" title="Please follow the pattern 000-000-0000"
+                                                    required="" maxlength="12" data-placeholder="XXX-XXX-XXXX">
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6 col-md-12">
+                                                <label for="inputEmail4" class="form-label">Email</label>
+                                                <input name="Email" id="Email" class="form-control" type="email"
+                                                    pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address"
+                                                    required="">
+                                            </div>
+                                            <h5>Credit Card Details</h5>
+                                            <div class="col-col-xl-6 col-lg-6 col-md-12 w-100 h-40 px-2">
+                                                <label for="creditCardNumber" class="form-label">Credit Card
+                                                    Number</label>
+                                                <input type="number" class="form-control " id="creditCardNumber"
+                                                    name="creditCardNumber" input name="card_num" id="card_num"
+                                                    title="1234 5678 9012 3456" pattern=".{19,19}" required=""
+                                                    maxlength="19" data-placeholder="XXXX XXXX XXXX XXXX"
+                                                    placeholder="1111 2222 3333 4444">
+                                            </div>
+                                            <div class="colcol-xl-6 col-lg-6 col-md-12">
+                                                <label for="expiryDate" class="form-label">Expiry Date</label>
+                                                <input name="Expiration" id="Expiration" maxlength="5" minlength="5"
+                                                    type="number" title="MM/YY" class="form-control" pattern=".{5,5}"
+                                                    data-valid-example="05/18" required="" data-placeholder="MM/YY"
+                                                    placeholder="12/24">
+                                            </div>
+                                            <div class="colcol-xl-6 col-lg-6 col-md-12">
+                                                <label for="cvv" class="form-label">CVV</label>
+                                                <input name="cvv" id="cvv" type="number" class="form-control"
+                                                    placeholder="123" maxlength="3" minlength="3" min="0" max="999"
+                                                    pattern=".{3,3}" required="" title="Three digit number only">
+                                            </div>
+
+                                            <div
+                                                class="ssl-emblem d-flex align-items-center justify-content-center mt-2">
+
+                                                <span
+                                                    class=" fw-500 fs-6 lh-5 d-flex align-items-center text-secondary">SSL
+                                                    | Data Encrption</span>
+                                                <img src="https://www.moveyellow.com/public/assets/images/ssl.png"
+                                                    alt="">
+                                            </div>
+                                            <div class=" ">
+                                                <button type="submit"
+                                                    class="btn fw-500 fs-4 px-6  w-100 btn-lg transition"
+                                                    style="color: #fff; background-color: #D28107;">Let's Do
+                                                    it!</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- Right Column -->
+                                    <div class="col-xl-6 col-lg-6 col-md-12 order-1 order-lg-2">
+                                        <form class="row g-3" id="orderForm">
+                                            <div class="container1 py-2 px-3" style="background-color: #fff;">
+                                                <div class="row">
+                                                    <div class="col-md-6 head  gap-2 pt-3 pb-4">
+                                                        <img src="https://www.moveyellow.com/public/assets/images/car.png"
+                                                            alt="Order_Image" class="img-fluid">
+                                                        <div class="d-flex flex-column justify-content-center">
+                                                            <h6 id="booking-text"></h6>
+                                                            <input type="hidden" name="booking_room"
+                                                                id="booking-text-input">
+                                                            <input type="hidden" name="booking_price"
+                                                                id="truck_base_price_input" value="0.00">
+                                                        </div>
+
+                                                    </div>
+
+                                                    <div class="head  pt-3 pb-3" id="modalpop">
+
+                                                        <div
+                                                            class="modal-checkout mb-2 align-items-center d-flex justify-content-between">
+                                                            <h5 class="mb-0 " id="outputValue">
+                                                                Date
+                                                            </h5>
+                                                            <h6 class="mb-0" id="booking-date-text">
+
+
+                                                            </h6>
+                                                            <input type="hidden" value="" id="booking-date-input"
+                                                                name="booking_date_input">
+                                                        </div>
+                                                        <div class="modal-checkout
+                                                             my-2 align-items-center d-flex justify-content-between">
+                                                            <h5 class="mb-0 ">
+                                                                Time
+                                                            </h5>
+                                                            <h6 class="mb-0" id="booking-time-text">
+
+
+                                                            </h6>
+                                                            <input type="hidden" id="booking-time-input"
+                                                                name="booking_time_input">
+
+                                                        </div>
+                                                        <div
+                                                            class="modal-checkout my-2 align-items-center d-flex justify-content-between">
+                                                            <h5 class="mb-0 ">
+                                                                Pickup
+                                                            </h5>
+                                                            <h6 class="mb-0" id="moving-from-text">
+
+                                                            </h6>
+                                                            <input name="pickup" id="moving-from-input" type="hidden">
+                                                        </div>
+                                                        <div
+                                                            class="modal-checkout my-2 align-items-center d-flex justify-content-between">
+                                                            <h5 class="mb-0 ">
+                                                                Delivery
+                                                            </h5>
+                                                            <h6 class="mb-0" id="moving-to-text">
+
+                                                            </h6>
+                                                            <input name="dropoff" id="moving-to-input" hidden="">
+                                                        </div>
+
+                                                        <div
+                                                            class="modal-checkout my-2 align-items-center d-flex justify-content-between">
+                                                            <h5 class="mb-0 ">
+                                                                Distance
+                                                            </h5>
+                                                            <h6 class="mb-0" id="distance">
+
+                                                            </h6>
+                                                            <input name="distance_input" type="number" step="any"
+                                                                hidden="" id="distance-input">
+                                                            <input name="from_distance_input" type="number" step="any"
+                                                                hidden="" id="from-distance-input">
+                                                            <input name="to_distance_input" type="number" step="any"
+                                                                hidden="" id="to-distance-input">
+
+
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    <div class="head pt-3 pb-3" id="modalpop">
+                                                        <div
+                                                            class="modal-checkout align-items-center mb-3 d-flex justify-content-between">
+                                                            <h6 class="mb-0">
+                                                                Extra Millage <br>
+                                                                <span>
+                                                                    Free up to <span class="free_miles">10</span>
+                                                                </span>
+                                                            </h6>
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <div class="d-flex flex-column align-items-end"
+                                                                    style="min-width: 87px;">
+                                                                    <h6 class="mb-0 d-flex flex-row align-items-end">
+                                                                        <p id="extra-mileage-text" class="mb-0"></p>
+                                                                        &nbsp;|&nbsp;
+                                                                        <p id="extra-mileage-cost" class="mb-0"></p>
+                                                                        <input name="extra_distance_input" type="number"
+                                                                            step="any" hidden="">
+                                                                        <input name="extra_distance_price_input"
+                                                                            type="number" step="any" hidden="">
+                                                                    </h6>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="modal-checkout align-items-center my-3 d-flex justify-content-between">
+                                                            <h6 class="mb-0">
+                                                                Flights of Stairs <br>
+                                                                <span>
+                                                                    Total on all stops
+                                                                </span>
+                                                            </h6>
+                                                            <div class="d-flex align-items-center gap-2">
+
+                                                                <input type="button" value="-" onclick="decrement2()"
+                                                                    style=" width: 30px; height: 30px; border: none; outline: none; border-radius: 1px; font-weight: 600px;">
+                                                                <h5 id="counting2" style="font-size: 17px;"></h5>
+                                                                <input type="button" value="+" onclick="increment2()"
+                                                                    style=" width: 30px; height: 30px; border: none; outline: none; border-radius: 1px; font-weight: 600px;">
+
+
+                                                                <!-- <div class="minus-btn"><img
+                                                                        src="https://www.moveyellow.com/public/assets/images/minus.png"
+                                                                        alt=""></div>
+                                                                <input value="0" class="value" name="num_flights">
+                                                                <div class="value">0
+                                                            </div> -
+                                                                <div class="plus-btn"><img
+                                                                        src="https://www.moveyellow.com/public/assets/images/plus.png"
+                                                                        alt=""></div> -->
+                                                            </div>
+                                                            <input name="flights_price_input" type="number" hidden="">
+                                                        </div>
+                                                        <div
+                                                            class="modal-checkout align-items-center my-3 d-flex justify-content-between">
+                                                            <h6 class="mb-0">
+                                                                Extra Stops <br>
+                                                                <span>
+                                                                    Within 10 miles
+                                                                </span>
+                                                            </h6>
+                                                            <div class="d-flex align-items-center gap-2">
+
+                                                                <input type="button" value="-" onclick="decrement()"
+                                                                    style=" width: 30px; height: 30px; border: none; outline: none; border-radius: 1px; font-weight: 600px;">
+                                                                <h5 id="counting" style="font-size: 17px;"></h5>
+                                                                <input type="button" value="+" onclick="increment()"
+                                                                    style=" width: 30px; height: 30px; border: none; outline: none; border-radius: 1px; font-weight: 600px;">
+
+
+
+                                                                <!-- <div class=""><img
+                                                                        src="https://www.moveyellow.com/public/assets/images/minus.png"
+                                                                        alt="" onclick="decrement()"></div>
+                                                                <input value="0" class="value" name="num_pluss"
+                                                                    id="counting">
+
+                                                                <div class=""><img
+                                                                        src="https://www.moveyellow.com/public/assets/images/plus.png"
+                                                                        onclick="increment()" alt=""></div> -->
+                                                            </div>
+                                                            <input name="stops_price_input" type="number" hidden="">
+                                                        </div>
+
+                                                        <div
+                                                            class="modal-checkout my-2 align-items-center d-flex justify-content-between">
+                                                            <h6 class="mb-0 ">
+                                                                Transaction
+                                                            </h6>
+                                                            <h6 class="mb-0" id="transaction-fee">
+                                                            </h6>
+                                                            <input name="transaction_price_input" type="text" hidden="">
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="modal-checkout pt-2 align-items-center d-flex justify-content-between">
+                                                        <h6>
+                                                            Total
+                                                        </h6>
+                                                        <h4 class="mb-0" id="totalprice">
+
+                                                        </h4>
+
+                                                        <input name="price" type="hidden">
+                                                    </div>
+                                                    <!-- Add more fields here -->
+                                                </div>
+                                            </div>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                        <!-- <button type="button" class="btn btn-primary">Let's Do it!</button> -->
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        </section>
+
+    </section>
+
+
+    <section class="bg-light-yellow bottom-wave pt-5">
+
+        <div class="container">
+            <div>
+
+                <h2 class="text-dark text-center fw-bold text-uppercase"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);"> Simple
+                    Move?SImple Price!
+
+                </h2>
+                <p class="text-dark text-center mt-4 max-740 mx-auto text-md"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    Moveyellow.com is perfect for Renters, Roommates, and Students looking for a hassle free, door
+                    to door
+                    moving service.
+                </p>
+            </div>
+
+            <div class="mt-5 pt-5">
+                <h4 class="fw-bold text-center"
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    All You Have to Do is:
+                </h4>
+            </div>
+            <div class="row mt-5 justify-content-between align-items-center">
+                <div class="col-lg-4 col-xl-4 col-12 d-flex flex-row align-items-center">
+                    <div
+                        class="bx-circle d-flex justify-content-center align-items-center flex-column position-relative">
+                        <div class="num-circle d-flex align-items-center justify-content-center position-absolute">1
+                        </div>
+                        <img src="./sec2img/hand.png" class="mb-3" alt="">
+                        <h4 class=" fw-bold text-center">pick a truck</h4>
+                        <p class="fw-bold text-center">
+                            movers are included!
+                        </p>
+
+                    </div>
+                    <!-- <div class="arrowsec2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="23" viewBox="0 0 13 23" fill="none">
+                            <path
+                                d="M2.33764 21.0682L11.1465 12.2086C11.4385 11.9148 11.4385 11.4386 11.1465 11.1448L2.33764 2.28517"
+                                stroke="#D28107" stroke-width="3.00001" stroke-linecap="round" />
+                        </svg>
+                    </div> -->
+                </div>
+
+                <div class="col-xl-4 col-lg-3  col-12 "
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <div
+                        class="bx-circle d-flex justify-content-center align-items-center flex-column position-relative">
+                        <div class="num-circle d-flex align-items-center justify-content-center position-absolute">
+                            2</div>
+                        <img class="mb-3" src="./sec2img/keyboard.png" alt="">
+                        <h4 class="text-center mb-1">
+                            Type Your <br> Details
+                        </h4>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-3  col-12 "
+                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+                    <div
+                        class="bx-circle d-flex justify-content-center align-items-center flex-column position-relative">
+                        <div class="num-circle d-flex align-items-center justify-content-center position-absolute">
+                            2</div>
+                        <img class="mb-3" src="./sec2img/tick.png" alt="">
+                        <h4 class="text-center mb-1">
+                            Book it!
+                        </h4>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <!-- <span class="down-arrow"></span> -->
+
+        </div>
+    </section>
+    <section>
+        <div class="container">
+
+            <div class="row align-items-center">
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+
+    <section class="bottom-wave pt-5">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                    <div class="img">
+                        <img src="./sec3img/Group 212.png" alt=""
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                    </div>
+
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                    <div class="sectext">
+                        <h2 class="text-dark mb-4 text-uppercase fw-bold"
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            Renters on a budget?</h2>
+                        <p
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            Discover our incredible low-cost moving services that encompass all the vital elements of a
+                            seamless move including, blanket wrapping, expert loading, prompt delivery, and efficient
+                            unloading that will keep you with a smile all the way into your new home.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="bg-light-yellow  bottom-wave">
+        <div class="container">
+            <div class="row align-items-center pt-5 flex-column-reverse flex-md-row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                    <div class="sectext">
+                        <h2 class="fw-bold text-black text-uppercase mb-4 "
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            Low-cost Student moves
+                        </h2>
+                        <p class=""
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            As tomorrow's leaders, students can enjoy our exclusive plan designed just for them,
+                            allowing them to keep more money in their pockets (and their parents' too!). There's no
+                            time wasted on creating inventories or getting tempted by hourly-based quotes that
+                            increase. Simply select a truck option based on the size of their move and click to book
+                            it!
+
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                    <div class="img">
+                        <img src="./sec4img/Group 210.png" alt=""
+                            style="translate: none; rotate: none; scale: none; opacity: 1;">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="top-wave bottom-wave">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                    <div class="img">
+                        <img src="./sec5img/Group 252.png" alt=""
+                            style="translate: none; rotate: none; scale: none; opacity: 1; ">
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                    <div class="content">
+                        <h2 class="fw-bold text-dark text-uppercase mb-4 "
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            Roommates move for less
+                        </h2>
+                        <p
+                            style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+                            To celebrate
+                            togetherness, you can now share a truck and a team with your roommates and move
+                            to/from multiple locations for less. This guarantees a fantastic start to your shared
+                            living
+                            experience. Take advantage of this offer while it lasts!
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-light-yellow top-wave">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#FECD81" fill-opacity="1"
+                d="M0,256L34.3,218.7C68.6,181,137,107,206,80C274.3,53,343,75,411,
+            117.3C480,160,549,224,617,218.7C685.7,213,754,139,823,117.3C891.4,96,960,128,1029,149.3C1097.1,171,1166,181,1234,176C1302.9,171,1371,149,1406,138.7L1440,128L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,
+            320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+            </path>
+        </svg>
+        <svg class="botwave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#FECD81" fill-opacity="1" d="M0,256L34.3,218.7C68.6,181,137,107,206,
+            80C274.3,53,343,75,411,117.3C480,160,549,224,617,218.7C685.7,213,754,139,823,117.3C891.4,96,960,128,1029,149.3C1097.1,171,1166,181,1234,176C1302.9
+            ,171,1371,149,1406,138.7L1440,128L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,
+            0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+        </svg> -->
+        <div class="container text">
+
+            <div class="row mt-5 mb-4 ">
+
+                <div class="col-xl-3 col-lg-3 col-md-3 col-12 ">
+                    <div class="">
+                        <h3 class="fw-500 fs-4 fw-bold lh-base">
+                            Solutions
+                        </h3>
+                        <ul class="list-unstyled p-0">
+                            <li>
+                                <a class="text-decoration-none text-dark fw-semibold" href="#">Renters</a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none text-dark fw-semibold " href="#">Students</a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none text-dark fw-semibold " href="#">Roomates</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-3 col-12">
+                    <div>
+                        <h3 class="fw-500 fw-bold
+            fs-4 
+            lh-base">
+                            Services
+                        </h3>
+                        <ul class="list-unstyled  p-0">
+                            <li class="text-decoration-none">
+                                <a class="text-decoration-none text-dark fw-semibold " href="#">Moving</a>
+                            </li>
+                            <li>
+                                <a class="text-decoration-none text-dark fw-semibold " href="#">Storage</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                    <div>
+                        <h3 class="fw-500 fw-bold
+            fs-4 
+            lh-base">
+                            Contact
+                        </h3>
+                        <ul class="list-unstyled p-0 text  ">
+                            <li>
+                                <a class="text-decoration-none text-dark fw-semibold "
+                                    href="#">contact@moveyellow.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright fw-light py-4">
+                    © Move Yellow All Rights Reserved 2023
+                </div>
+            </div>
+
+    </footer>
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script> -->
+</body>
+
+</html>

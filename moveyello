@@ -1,0 +1,240 @@
+<div class="pt-4 pb-3  px-4 h-100">
+    <div class="head d-flex pb-3 justify-content-between align-items-center">
+        <h5 class="fw-semibold">
+            Payment
+        </h5>
+        <p class="mb-0 minutes" style="color:grey;">
+            Time left to Book :
+            <span id="minutes" style="color:#e4a345;">
+                10:00
+            </span> &nbsp;
+        </p>
+    </div>
+
+    <!-- <input type="hidden"> -->
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12">
+            <div class="formcontrol">
+                <label for="">First Name</label>
+                <input name="first_name" type="text" pattern="[A-Za-z]+" title="Alphabets only" required="">
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12">
+            <div class="formcontrol">
+                <label for="">Last Name</label>
+                <input name="last_name" type="text" pattern="[A-Za-z]+" title="Alphabets only" required="">
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-xl-6 col-lg-6 col-md-12">
+            <div class="formcontrol">
+                <label for="">Phone</label>
+                <span class="shell"><span aria-hidden="true" id="PhoneMask"><i></i>XXX-XXX-XXXX</span><input
+                        name="Phone" id="Phone" class="masked" type="text" pattern=".{12,12}"
+                        title="Please follow the pattern 000-000-0000" required="" maxlength="12"
+                        data-placeholder="XXX-XXX-XXXX"></span>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12">
+            <div class="formcontrol">
+                <label for="">Email</label>
+                <input name="Email" id="Email" type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                    title="Invalid email address" required="">
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="formcontrol">
+                <label for="">Card Number</label>
+                <span class="shell"><span aria-hidden="true" id="card_numMask"><i></i>XXXX XXXX XXXX XXXX</span><input
+                        name="card_num" id="card_num" type="text" title="1234 5678 9012 3456" class="masked"
+                        pattern=".{19,19}" required="" maxlength="19" data-placeholder="XXXX XXXX XXXX XXXX"
+                        placeholder="1111 2222 3333 4444"></span>
+                <span id="card_type"></span>
+            </div>
+        </div>
+
+    </div>
+    <div class="row mt-2">
+        <div class="col-xl-6 col-lg-6 col-md-12">
+            <div class="formcontrol">
+                <label for="">Expiration Date</label>
+                <span class="shell"><span aria-hidden="true" id="ExpirationMask"><i></i>MM/YY</span><input
+                        name="Expiration" id="Expiration" maxlength="5" minlength="5" type="text" title="MM/YY"
+                        class="masked" pattern=".{5,5}" data-valid-example="05/18" required="" data-placeholder="MM/YY"
+                        placeholder="12/24"></span>
+            </div>
+        </div>
+        <div class="col-xl-6 col-lg-6 col-md-12">
+            <div class="formcontrol">
+                <label for="">CVV</label>
+                <input name="cvv" id="cvv" type="text" placeholder="123" maxlength="3" minlength="3" min="0" max="999"
+                    pattern=".{3,3}" required="" title="Three digit number only">
+            </div>
+        </div>
+    </div>
+    <div class="ssl-emblem">
+
+        <span>SSL | Data Encrption</span>
+        <img src="https://www.moveyellow.com/public/assets/images/ssl.png" alt="">
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-12 d-flex flex-column align-items-center">
+            <button type="submit" id="letsdoit" class="submit">Let’s do it!</button>
+            <button type="button" id="loadingsumbit" class="submit loadingsumbit" style="display: none;">
+                <div class="lds-dual-ring"></div>
+            </button>
+            <span class="address-error" id="place_order_error"></span>
+        </div>
+    </div>
+</div>
+<div class="col-xl-6 col-lg-6 col-md-12 order-1 order-lg-2">
+    <div class="pt-4 pb-3 px-4 h-100">
+        <div class="head  pb-3">
+            <h5 class="fw-semibold">
+                Order Summary
+            </h5>
+        </div>
+        <div class="head d-flex gap-2 pt-3 pb-4">
+            <img id="booking-truck" src="https://www.moveyellow.com/public/assets/images/car.png" alt="">
+            <h6 class="mb-0" id="truck-base-price-text">$0</h6>
+            <div class="d-flex flex-column justify-content-between">
+                <h6 id="booking-text">
+                </h6>
+                <input type="hidden" name="booking_room" id="booking-text-input">
+                <input type="hidden" name="booking_price" id="truck_base_price_input" value="0.00">
+            </div>
+        </div>
+        <div class="head  pt-3 pb-3">
+
+            <div class="checkout-options mb-2 align-items-center d-flex justify-content-between">
+                <h5 class="mb-0 ">
+                    Date
+                </h5>
+                <h6 class="mb-0" id="booking-date-text">
+
+
+                </h6>
+                <input type="hidden" value="" id="booking-date-input" name="booking_date_input">
+            </div>
+            <div class="checkout-options my-2 align-items-center d-flex justify-content-between">
+                <h5 class="mb-0 ">
+                    Time
+                </h5>
+                <h6 class="mb-0" id="booking-time-text">
+                    08:45 AM
+
+                </h6>
+                <input type="hidden" id="booking-time-input" name="booking_time_input">
+
+            </div>
+            <div class="checkout-options my-2 align-items-center d-flex justify-content-between">
+                <h5 class="mb-0 ">
+                    Pickup
+                </h5>
+                <h6 class="mb-0" id="moving-from-text">
+
+                </h6>
+                <input name="pickup" id="moving-from-input" type="hidden">
+            </div>
+            <div class="checkout-options my-2 align-items-center d-flex justify-content-between">
+                <h5 class="mb-0 ">
+                    Delivery
+                </h5>
+                <h6 class="mb-0" id="moving-to-text">
+
+                </h6>
+                <input name="dropoff" id="moving-to-input" hidden="">
+            </div>
+
+            <div class="checkout-options my-2 align-items-center d-flex justify-content-between">
+                <h5 class="mb-0 ">
+                    Distance
+                </h5>
+                <h6 class="mb-0" id="distance">
+
+                </h6>
+                <input name="distance_input" type="number" step="any" hidden="" id="distance-input">
+                <input name="from_distance_input" type="number" step="any" hidden="" id="from-distance-input">
+                <input name="to_distance_input" type="number" step="any" hidden="" id="to-distance-input">
+
+
+            </div>
+
+
+        </div>
+        <div class="head pt-3 pb-3">
+            <div class="checkout-options align-items-center mb-3 d-flex justify-content-between">
+                <h6 class="mb-0">
+                    Extra Millage <br>
+                    <span>
+                        Free up to <span class="free_miles">10</span>
+                    </span>
+                </h6>
+                <div class="d-flex align-items-center gap-2">
+                    <!-- <div class=""><img src="https://www.moveyellow.com/public/assets/images/minus.png" alt=""></div> -->
+                    <div class="d-flex flex-column align-items-end" style="min-width: 87px;">
+                        <h6 class="mb-0 d-flex flex-rowalign-items-end">
+                            <p id="extra-mileage-text" class="mb-0">0.00 mi</p>
+                            &nbsp;|&nbsp;
+                            <p id="extra-mileage-cost" class="mb-0">$0.00</p>
+                            <input name="extra_distance_input" type="number" step="any" hidden="" id="extra_distance_input">
+                            <input name="extra_distance_price_input" type="number" step="any" hidden="" id="extra_distance_price_input">
+                        </h6>
+                    </div>
+                    <!-- <div><img src="https://www.moveyellow.com/public/assets/images/plus.png" alt=""></div> -->
+                </div>
+            </div>
+            <div class="checkout-options align-items-center my-3 d-flex justify-content-between">
+                <h6 class="mb-0">
+                    Flights of Stairs <br>
+                    <span>
+                        Total on all stops
+                    </span>
+                </h6>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="minus-btn"><img src="https://www.moveyellow.com/public/assets/images/minus.png" alt=""></div>
+                    <input value="0" class="value" name="num_flights" id="num_flights">
+                    <!-- <div class="value">0
+                    </div> -->
+                    <div class="plus-btn"><img src="https://www.moveyellow.com/public/assets/images/plus.png" alt=""></div>
+                </div>
+                <input name="flights_price_input" type="number" hidden="" id="flights_price_input">
+            </div>
+            <div class="checkout-options align-items-center my-3 d-flex justify-content-between">
+                <h6 class="mb-0">
+                    Extra Stops <br>
+                    <span>
+                        Within 10 miles
+                    </span>
+                </h6>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="minus-btn"><img src="https://www.moveyellow.com/public/assets/images/minus.png" alt=""></div>
+                    <input value="0" class="value" name="num_stops" id="num_stops">
+                    <div class="plus-btn"><img src="https://www.moveyellow.com/public/assets/images/plus.png" alt=""></div>
+                </div>
+                <input name="stops_price_input" type="number" hidden="" id="stops_price_input">
+            </div>
+
+            <div class="checkout-options my-2 align-items-center d-flex justify-content-between">
+                <h6 class="mb-0 ">
+                    Transaction
+                </h6>
+                <h6 class="mb-0" id="transaction-fee">$0.00</h6>
+                <input name="transaction_price_input" type="text" hidden="" id="transaction_price_input">
+            </div>
+            
+        </div>
+        <div class="checkout-options pt-2 align-items-center d-flex justify-content-between">
+            <h6>
+                 Total
+            </h6>
+            <h4 class="mb-0" id="total-price">$0.00</h4>
+
+            <input name="price" type="hidden" id="total-price-input" value="0.00">
+        </div>
+    </div>
+</div>
