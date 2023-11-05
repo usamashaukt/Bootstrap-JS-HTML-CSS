@@ -1,0 +1,564 @@
+@import url(https://fonts.googleapis.com/css2?);
+
+@font-face {
+    font-family: 'Halyard Text';
+    src: url('fonts/halyard-text.woff2') format('woff2'),
+        url('fonts/halyard-text.woff') format('woff');
+}
+
+body,
+h1,
+h2,
+h3,
+/* h4, */
+p,
+ul,
+li {
+    font-family: 'Halyard Text', sans-serif;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    background-color: #F2F9FF;
+}
+
+
+
+h1 {
+    font-size: 56px;
+    font-weight: 400;
+}
+
+header {
+    background-color: #F2F9FF;
+    color: white;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav img {
+    width: 100px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+}
+
+nav ul li {
+    margin-right: 20px;
+
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1E266D;
+    transition: color 0.3s;
+    padding: 12px 16px;
+
+}
+
+nav ul li a:hover {
+    color: #ff9900;
+    /* Change color on hover */
+}
+
+/* .hamburger {
+
+    position: relative;
+    width: 30px;
+    height: 4px;
+    background: black;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 2;
+    transition: 0.3s;
+
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    right: 0;
+    background: black;
+    border-radius: 10px;
+    transition: 0.3s;
+
+}
+
+.hamburger::before {
+top: -10px;
+width: 20px;
+}
+.hamburger::after{
+top: 10px;
+width: 25px;
+}
+
+.toggle-menu{
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    z-index: 3;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.hamburger,.toggle-menu
+{
+    display: none;
+}
+/* for hamburger  */
+.Navi {
+    list-style: none;
+    display: flex;
+}
+
+.Navi li {
+    margin-right: 20px;
+    position: relative;
+} */
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    list-style: none;
+    padding: 10px;
+}
+
+.dropdown.active {
+    display: block;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+ /* nav .contact, .Navi input:checked ~ .hamburger{
+    background: transparent;
+}
+nav .contact, .Navi input:checked ~ .hamburger::before
+{
+    top: 0;
+    transform:rotate(-45deg);
+    width: 30px;
+}
+
+nav .contact, .Navi input:checked ~ .hamburger::after
+{
+top: 0;
+transform: rotate(45deg);
+width: 30px;
+}  */
+
+/* Style the dropdown menu */
+nav .dropdown {
+    display: none;
+    position: absolute;
+    /* top: 100%; */
+    width: 200px;
+    height: 100px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.849);
+    min-width: 160px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+
+}
+
+
+
+nav ul li:hover .dropdown {
+    display: block;
+    position: absolute;
+}
+
+.down-arrow {
+    position: absolute;
+    top: 3.9%;
+    /* right: 10px; */
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+    transition: transform 1s;
+    transform-origin: center;
+}
+
+nav ul li:hover .down-arrow {
+    /* border-top: 5px solid #ff9900; */
+    /* Change to border-top */
+    /* border-bottom: none; */
+    /* Remove the bottom border */
+    transform: translateY(-50%) rotate(180deg);
+    /* Rotate the arrow 180 degrees */
+}
+
+nav .dropdown li {
+    margin: 0 0;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the contact section */
+nav .contact {
+    display: flex;
+    align-items: center;
+
+}
+
+nav .contact a {
+    text-decoration: none;
+    color: #1E266D;
+    margin-right: 10px;
+}
+
+/* Style the "Contact us" button */
+#butn {
+    background-color: #3751FF;
+    color: white;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 400;
+    font-size: small;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#butn:hover {
+    background-color: #ffcc66;
+}
+
+.box {
+    border: 4px solid black;
+    margin: center;
+    padding: 5px 10px;
+}
+
+/* .select {
+    position: relative;
+    display: flex;
+    color: black;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+} */
+
+.Mcontainer {
+    display: flex;
+    background-color: #F2F9FF;
+    margin: auto;
+    padding: 60px 0;
+    justify-content: center;
+}
+
+
+.boxt {
+    background-color: #F2F9FF;
+    margin: 4px;
+    padding: 35px 0;
+    color: #1E266D;
+    text-align: center;
+    font-weight: 500;
+}
+
+.boxt h1 {
+    margin-bottom: 5%;
+    white-space: normal;
+    /* Allow wrapping of text */
+    word-wrap: break-word;
+    /* Allow long words to break */
+    /* max-width: 50%; */
+    /* Limit the width of the text container */
+    text-align: center;
+    /* padding-left: 25%; */
+}
+
+.boxt p {
+    margin-top: 10px;
+    /* Add space above the p */
+    padding-left: 1%;
+}
+
+.buydig {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    list-style-type: none;
+}
+
+#btn-2 {
+    background-color: #FFFFFF;
+    color: #455880;
+    padding: 13px 16px;
+    border-radius: 30px;
+    font-weight: 400;
+    font-size: small;
+    width: 80px;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+.btn-2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 30px;
+
+}
+
+.btn-2:hover {
+    background-color: #455880;
+    /* Change background color on hover */
+    color: #ff9900;
+    /* Change text color on hover */
+    cursor: pointer;
+    /* Show pointer cursor on hover */
+}
+
+.Graphic {
+
+    background-image: url('');
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+}
+
+.footer {
+    background-color: #FFFFFF;
+}
+
+.f-container {
+    font-family: 'Halyard Text', sans-serif;
+    max-width: 1600px;
+    margin: auto;
+    background-color: #FFFFFF;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row ul {
+    list-style: none;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+
+
+}
+
+.fcol {
+    width: 20%;
+    padding: 0 15px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+
+
+}
+
+.fcol h4 {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #1E266D;
+    margin-bottom: 15px;
+    position: relative;
+
+}
+
+/* .fcol ul li:not(:last child){
+margin-bottom: 20px;
+} */
+.fcol ul li a {
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #455880;
+    text-decoration: none;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 18px;
+    background-color: #FFFFFF;
+
+}
+
+.fcol ul li a:hover {
+    color: orangered;
+}
+
+.fcol .Social-links a {
+    display: inline-block;
+    height: 17px;
+    width: 15px;
+    background-color: #FFFFFF;
+    /* background-color: rgba(255, 255, 255, 0.849); */
+    margin: 0 5px 42px 0;
+    text-align: center;
+    line-height: 40px;
+}
+
+
+.fcol .description {
+    color: #455880;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+}
+
+
+.fcol img {
+    margin-bottom: 5px;
+    margin-top: 20px;
+    /* Add some space between logo and text */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.policy-links li {
+    list-style: none;
+    display: inline;
+    margin-right: 10px;
+    box-sizing: border-box;
+}
+
+.policy-links a {
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.policy-links li:last-child {
+    margin-right: 0;
+}
+
+
+/* reponsive */
+/* for mobile  */
+
+/* @media screen and (max-width:992px)
+{
+ .hamburger,.toggle-menu{
+    display: block;
+ }   
+
+
+ .Navi {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 10px;
+}
+
+.toggle-menu:checked ~ .Navi {
+    display: flex;
+} */
+
+
+ /* nav .contact, .Navi {
+    justify-content: start;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #1E266D;
+    width: 300px;
+    height: 100%;
+    padding-top: 65px;
+ } */
+/* } */
+
+@media (max-width:767px) {
+
+    nav ul {
+
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin-bottom: 10%;
+        margin-right: 0;
+    }
+
+    nav ul li a {
+        margin: 10px;
+        padding: 8px 16px;
+    }
+
+    .down-arrow {
+
+        display: none;
+    }
+
+    .fcol {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .footer-links {
+        width: 50%;
+        margin-bottom: auto;
+    }
+
+    .Mcontainer {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    #butn,
+    #btn-2 {
+        padding: 8px 16px;
+        font-size: small;
+        width: auto;
+    }
+
+}
+
+
+/* Tablets and Small Laptops */
+@media screen and (min-width: 768px) and (max-width: 1023px) {}
+
+
+
+/* Larger Laptops and Desktops */
+@media screen and (min-width: 1024px) {}
